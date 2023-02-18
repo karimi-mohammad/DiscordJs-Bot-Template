@@ -18,7 +18,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 	try {
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 		const data = await rest.put(
-			// If you want add commands only in one guild you should use GuildId else you should to delete GuildId
+			//If you want it to be added to only one server, use GuildId, otherwise, remove it
 			Routes.applicationGuildCommands(ClientId, GuildId),
 			
 			{ body: commands },
